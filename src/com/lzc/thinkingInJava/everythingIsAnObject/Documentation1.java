@@ -1,0 +1,8 @@
+package com.lzc.thinkingInJava.everythingIsAnObject;
+/** A class comment**/
+public class Documentation1{
+	/** A fielf comment**/
+	public int i;
+	/** A method comment**/
+	public void f(){};
+}
