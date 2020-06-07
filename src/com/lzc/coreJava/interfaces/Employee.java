@@ -1,5 +1,7 @@
 package com.lzc.coreJava.interfaces;
 
+import javax.swing.*;
+
 /**
  * Created by POPO LIU on 2020-06-02.
  */

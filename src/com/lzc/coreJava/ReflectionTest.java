@@ -1,4 +1,4 @@
-package com.lzc.corejava;
+package com.lzc.coreJava;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -76,30 +76,30 @@ public class ReflectionTest {
         System.out.println("}");
     }
     public static void main(String[] args){
-//        try {
-//            analyClass("com.lzc.corejava.Manager");
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-        List<String> ttttt = new ArrayList<String>();
-
-        ttttt.contains("");
         try {
-            Class s = TestTest.class;
-            s.getComponentType();
-            Constructor ss = s.getDeclaredConstructor(String.class);
-            ss.setAccessible(true);
-            TestTest ttt = (TestTest) ss.newInstance("mm");
-            Method mm = s.getDeclaredMethod("getTe");
-            mm.setAccessible(true);
-            mm.invoke(ttt);
-            Field f = s.getDeclaredField("te");
-            f.setAccessible(true);
-            f.set(ttt,"nnn");
-            mm.invoke(ttt);
-        } catch (Exception e) {
+            analyClass("com.lzc.coreJava.innerClass.TalkingClock$1TimePrinter");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+//        List<String> ttttt = new ArrayList<String>();
+//
+//        ttttt.contains("");
+//        try {
+//            Class s = TestTest.class;
+//            s.getComponentType();
+//            Constructor ss = s.getDeclaredConstructor(String.class);
+//            ss.setAccessible(true);
+//            TestTest ttt = (TestTest) ss.newInstance("mm");
+//            Method mm = s.getDeclaredMethod("getTe");
+//            mm.setAccessible(true);
+//            mm.invoke(ttt);
+//            Field f = s.getDeclaredField("te");
+//            f.setAccessible(true);
+//            f.set(ttt,"nnn");
+//            mm.invoke(ttt);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
 class TestTest{
