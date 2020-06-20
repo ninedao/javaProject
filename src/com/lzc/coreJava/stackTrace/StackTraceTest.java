@@ -1,6 +1,8 @@
 package com.lzc.coreJava.stackTrace;
 
-import java.util.logging.Logger;
+import java.io.IOException;
+import java.util.GregorianCalendar;
+import java.util.logging.*;
 
 /**
  * Created by POPO LIU on 2020-06-11.
@@ -38,8 +40,37 @@ public class StackTraceTest {
         ///logger.setLevel(Level.FINE);
 
         System.setProperty("java.util.logging.config.file", "src/com/lzc/source/properties/logging.properties");
-        System.out.println(System.getProperty("java.util.logging.config.file"));
-        logger = Logger.getLogger("StackTraceTest");
+        System.out.println(System.getProperty("java.util.logging.config.class"));
+        logger = Logger.getLogger("StackTraceTest","com.lzc.coreJava.stackTrace.logmessages_cn");
+        Handler handler = null;
+        Handler handler1 = new ConsoleHandler();
+        System.setProperty("user.home","src/com/lzc/coreJava/stackTrace");
+        try {
+            handler = new FileHandler();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        logger.setUseParentHandlers(false);
+        handler1.setFormatter(new java.util.logging.XMLFormatter());
+        handler.setFilter(new Filter() {
+            @Override
+            public boolean isLoggable(LogRecord record) {
+                if(record.getMessage().startsWith("test")) {
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        });
+//        handler.setFormatter(new Formatter() {
+//            @Override
+//            public String format(LogRecord record) {
+//                return "[" + GregorianCalendar.getInstance().getTime() + "]" + "[" + record.getSourceClassName() + "." + record.getSourceMethodName() + "]" + ":" + record.getMessage() + "\n";
+//            }
+//        });
+        //handler.setLevel(Level.INFO);
+        logger.addHandler(handler);
+        logger.log(Level.INFO,"test",new Object[]{"is","good"});
         Exception e = new Exception("test");
         logger.throwing(" com.lzc.coreJava.stackTrace","main",e);
         logger.fine("111");
