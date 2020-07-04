@@ -1,6 +1,7 @@
 package com.lzc.coreJava.stackTrace;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.logging.*;
 
@@ -42,6 +43,7 @@ public class StackTraceTest {
         System.setProperty("java.util.logging.config.file", "src/com/lzc/source/properties/logging.properties");
         System.out.println(System.getProperty("java.util.logging.config.class"));
         logger = Logger.getLogger("StackTraceTest","com.lzc.coreJava.stackTrace.logmessages_cn");
+        System.out.println(logger.getParent());
         Handler handler = null;
         Handler handler1 = new ConsoleHandler();
         System.setProperty("user.home","src/com/lzc/coreJava/stackTrace");

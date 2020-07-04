@@ -1,4 +1,4 @@
-package com.lzc.corejava.methods;
+package com.lzc.coreJava.methods;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
