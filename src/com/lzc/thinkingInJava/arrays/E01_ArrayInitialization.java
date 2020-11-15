@@ -1,6 +1,8 @@
 package com.lzc.thinkingInJava.arrays;
 
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class E01_ArrayInitialization {
