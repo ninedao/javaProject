@@ -43,10 +43,10 @@ public class Tester<C> {
         new Tester<C>(cntnr, tests, paramList).timedTest();
     }
     private void displayHeader() {
-        int width = fieldWidth * tests.size() + sizeWidth;
-        int dashLength = width - headline.length() - 1;
-        StringBuilder head = new StringBuilder(width);
-        for(int i = 0; i< dashLength/2; i++){
+        int width = fieldWidth * tests.size() + sizeWidth; // 8 * tests.size + 5 //53
+        int dashLength = width - headline.length() - 1; // 53-9-1 //43
+        StringBuilder head = new StringBuilder(width); //
+        for(int i = 0; i< dashLength/2; i++){ // 25
             head.append("-");
         }
         head.append(' ');

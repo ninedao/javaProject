@@ -5,5 +5,5 @@ public abstract class Test<C> {
     public Test(String name){
         this.name = name;
     }
-    abstract int test(C container, TestParam tp);
+    abstract int test(C list, TestParam tp);
 }
