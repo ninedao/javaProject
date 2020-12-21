@@ -3,6 +3,7 @@ package com.lzc.thinkingInJava.util;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.TreeSet;
 
 public class TextFile extends ArrayList<String> {
     public static String read(String fileName){
@@ -57,5 +58,14 @@ public class TextFile extends ArrayList<String> {
         }catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void main(String[] args) {
+        String file = read("C:\\LocalFiles\\project\\IdeaProjects\\javaProject\\src\\com\\lzc\\thinkingInJava\\util\\TextFile.java");
+        write("test.txt", file);
+        TextFile textFile = new TextFile("test.txt");
+        textFile.write("test2.txt");
+        TreeSet<String> treeSet = new TreeSet<String>(new TextFile("C:\\LocalFiles\\project\\IdeaProjects\\javaProject\\src\\com\\lzc\\thinkingInJava\\util\\TextFile.java","\\W+"));
+        System.out.println(treeSet.headSet("a"));
     }
 }

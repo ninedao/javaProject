@@ -4,12 +4,12 @@ import com.lzc.thinkingInJava.holding.Practice13;
 
 import java.util.Arrays;
 
-public class GreenhouseControls extends Practice13 {
+public class GreenhouseControls extends Controller {
     private boolean light = false;
     private boolean water = false;
     private String thermostat = "Day";
     public class LightOn extends Event{
-        protected LightOn(long delayTime) {
+        public LightOn(long delayTime) {
             super(delayTime);
         }
 
@@ -24,7 +24,7 @@ public class GreenhouseControls extends Practice13 {
         }
     }
     public class LightOff extends Event{
-        protected LightOff(long delayTime) {
+        public LightOff(long delayTime) {
             super(delayTime);
         }
 
@@ -40,7 +40,7 @@ public class GreenhouseControls extends Practice13 {
     }
 
     public class WaterOn extends Event{
-        protected WaterOn(long delayTime) {
+        public WaterOn(long delayTime) {
             super(delayTime);
         }
 
@@ -56,7 +56,7 @@ public class GreenhouseControls extends Practice13 {
     }
 
     public class WaterOff extends Event{
-        protected WaterOff(long delayTime) {
+        public WaterOff(long delayTime) {
             super(delayTime);
         }
 
@@ -72,7 +72,7 @@ public class GreenhouseControls extends Practice13 {
     }
 
     public class ThermostatNight extends Event{
-        protected ThermostatNight(long delayTime) {
+        public ThermostatNight(long delayTime) {
             super(delayTime);
         }
 
@@ -88,7 +88,7 @@ public class GreenhouseControls extends Practice13 {
     }
 
     public class ThermostatDay extends Event{
-        protected ThermostatDay(long delayTime) {
+        public ThermostatDay(long delayTime) {
             super(delayTime);
         }
 
@@ -103,7 +103,7 @@ public class GreenhouseControls extends Practice13 {
         }
     }
     public class Bell extends Event{
-        protected Bell(long delayTime) {
+        public Bell(long delayTime) {
             super(delayTime);
         }
 
@@ -118,7 +118,7 @@ public class GreenhouseControls extends Practice13 {
     }
     public class Restart extends Event{
         private Event[] events;
-        protected Restart(long delayTime, Event[] events) {
+        public Restart(long delayTime, Event[] events) {
             super(delayTime);
             this.events = events;
             for(Event e : events){
@@ -142,7 +142,7 @@ public class GreenhouseControls extends Practice13 {
         }
     }
     public static class Terminate extends Event{
-        protected Terminate(long delayTime) {
+        public Terminate(long delayTime) {
             super(delayTime);
         }
 

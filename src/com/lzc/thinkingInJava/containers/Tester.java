@@ -9,7 +9,7 @@ public class Tester<C> {
     private List<Test<C>> tests;
     private String headline="";
     private TestParam[] paramList = defaultParam;
-    protected C initalize(int szie){
+    protected C initalize(int size){
         return container;
     }
     private static String stringField(){
@@ -69,7 +69,7 @@ public class Tester<C> {
             for(Test<C> test : tests){
                 C kontainer = initalize(param.size);
                 long start = System.nanoTime();
-                int reps = test.test(container, param);
+                int reps = test.test(kontainer, param);
                 long duration  = System.nanoTime() - start;
                 long timePerRep = duration / reps;
                 System.out.format(numberField(), timePerRep);

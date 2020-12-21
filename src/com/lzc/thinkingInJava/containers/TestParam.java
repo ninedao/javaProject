@@ -8,8 +8,9 @@ public class TestParam {
         this.size = size;
         this.loops = loops;
     }
-    public static TestParam[] array(int... values) {
-        int size = values.length / 2;
+
+    public static TestParam[] array(int... values){
+        int size = values.length/2;
         TestParam[] result = new TestParam[size];
         int n = 0;
         for(int i = 0; i < size; i++){
@@ -17,9 +18,10 @@ public class TestParam {
         }
         return result;
     }
-    public static TestParam[] array(String[] values) {
+
+    public static TestParam[] array(String[] values){
         int[] vals = new int[values.length];
-        for(int i = 0; i < values.length; i++){
+        for(int i = 0; i < vals.length; i++){
             vals[i] = Integer.decode(values[i]);
         }
         return array(vals);
